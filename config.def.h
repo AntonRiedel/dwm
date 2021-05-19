@@ -31,10 +31,9 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class         instance  title   tags  mask  isfloating  isterminal  noswallow  monitor */
-   { "st",         NULL,     NULL,   0,	   0,    1,          0,         -1 },
-   { "Alacritty"  ,NULL,     NULL,   0,	   0,    1,          0,         -1 },
-   { "Termite"    ,NULL,     NULL,   0,	   0,    1,          0,         -1 },
-   { "Tor Browser",NULL,     NULL,   0,    1,    0,          1,         -1 }
+          {"st",         NULL,     NULL,   0,	 0,    1,          0,         -1 },
+          {"Alacritty",  NULL,     NULL,   0,	 0,    1,          0,         -1 },
+          {"Tor Browser",NULL,     NULL,   0,    1,    0,          1,         -1 }
 };
 
 /* layout(s) */
@@ -45,8 +44,8 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
+	{ "><>",      NULL },    /* no layout function means floating behavior */
 };
 
 /* key definitions */
@@ -67,8 +66,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	/* { MODKEY,                    XK_f,      setlayout,      {.v = &layouts[1]} }, */
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
